@@ -1,0 +1,15 @@
+#from a given string it gets you the count of characters that are forming a specific pattern 
+# as given below we extract the number of times 'CDC' comes in given string 
+
+lst = []
+lst2 = []
+lst1 = ['ABCDCCDC']
+
+for i in lst1:
+    for j in range(len(lst1[0])-2):
+        lst.append(i[j]+i[j+1]+i[j+2])
+        
+for i in lst:
+    if i == 'CDC':
+        lst2.append(i)
+        print(len(lst2))
