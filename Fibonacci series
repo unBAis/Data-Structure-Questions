@@ -1,0 +1,24 @@
+#fibonacci series
+
+
+def fib_series(n):
+    fib_list = []
+    fib_0 = 0
+    fib_1 = 1
+
+    if n == 0:
+        fib_list.append(None)
+    elif n == 1:
+        fib_list.append(fib_0)
+    elif n == 2:
+        fib_list.append(fib_0)
+        fib_list.append(fib_1)
+    else:
+        fib_list.append(fib_0)
+        fib_list.append(fib_1)
+        for i in range(2,n):
+            fib_n = fib_0 + fib_1
+            fib_0 = fib_1
+            fib_1 = fib_n
+            fib_list.append(fib_n) 
+    return fib_list
