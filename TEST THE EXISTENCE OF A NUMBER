@@ -1,0 +1,29 @@
+
+# search if a number is present in the given list or not
+#using recursion
+
+def find_number(num_list,num):
+   
+    if (len(num_list) % 2) == 0:
+        first = num_list[:int(len(num_list)/2)]
+    else:
+        first = num_list[:int((len(num_list)+1)/2)] 
+        
+    sec = []
+    for i in num_list:
+        if i not in first:
+            sec.append(i)
+
+    if first[len(first)-1] == num:
+        print("match found:",len(first), first[len(first)-1])
+    elif first[len(first)-1] > num:
+        print("further division in first:",len(first))
+        find_number(first,num)
+    elif first[len(first)-1] < num:
+        if sec[len(sec)-1] == num:
+            print("match found:",len(sec),sec[len(sec)-1])
+        elif sec[len(sec)-1] > num:
+            print("further division in second:",len(sec))
+            find_number(sec,num)
+        elif sec[len(sec)-1] < num:
+            print("match not found:",len(sec),sec[len(sec)-1])
