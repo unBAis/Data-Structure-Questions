@@ -1,0 +1,7 @@
+def gcd(m,n):
+  cf = []
+  for i in range(1,max(m,n)+1):
+    if (max(m,n) % i) == 0:
+      if (min(m,n) % i) == 0:
+        cf.append(i)
+  return max(cf)
