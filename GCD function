@@ -1,3 +1,4 @@
+#simple method
 def gcd(m,n):
   cf = []
   for i in range(1,max(m,n)+1):
@@ -5,3 +6,38 @@ def gcd(m,n):
       if (min(m,n) % i) == 0:
         cf.append(i)
   return max(cf)
+
+
+#starting from backward
+def gcd_eff(m,n):
+  i = min(m,n)
+  while i >0:
+    if (m % i) == 0 and (n % i) == 0:
+      return(i) #since the first one to be return will be the maximum
+    else:
+      i = i-1
+
+
+#by euclid theorem i.e for m>n, if d is CD of m, n then d is CD of m,n, m-n.
+
+def gcd_euclid(m,n):
+  if m < n:
+    #just switch the values to make m as the greatest
+    (m,n) = (n,m)
+
+  if m%n == 0:
+    return(n)
+  else:
+    # gcd_euclid(max(n, m-n), min(n,m-n)) #recursively reducing the m,n
+    gcd_euclid(n,m%n) #instead of reducing the m by a number n gradually (increasing the number of steps ), 
+                      # we can take the remainder of m/n as the next n as cd, the first reminder to be completed divided will be GCD
+
+#similar version in while 
+def gcd_while(m,n):
+  if m < n:
+    (m,n) = (n,m) #just switch the values to make m as the greatest
+  while m%n != 0:
+    print(m,n,m%n)
+    # (m,n) = (max(n, m-n), min(n,m-n))  #switching the values of m,n 
+    (m,n) = (n,m%n) #taking remainder 
+  return n
