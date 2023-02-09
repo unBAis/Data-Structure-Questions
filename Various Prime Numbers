@@ -1,0 +1,29 @@
+def factors(n):
+  fact = []
+  for i in range(1,n+1):
+    if (n % i) == 0:
+      fact = fact + [i]
+  return fact
+
+def is_prime(n):
+  if factors(n) == [1,n]:
+    return True
+  else:
+    return(False)
+
+def upto_prime(n):
+  prime_nos = []
+  for i in range(1,n+1):
+    if is_prime(i) == True:
+      prime_nos = prime_nos + [i]
+  return prime_nos
+
+
+def n_prime(n):
+  prime_len = 0
+  first_no = 1
+  while n != prime_len:
+    # print(n, first_no,prime_len)
+    prime_len = len(upto_prime(first_no))
+    first_no = first_no + 1
+  return upto_prime(first_no) 
