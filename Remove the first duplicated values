@@ -1,0 +1,16 @@
+lst = [3,5,7,5,3,7,10]
+
+def reverse(lst):
+  res_lst = []
+  for i in range(len(lst)):
+    res_lst.append(lst[len(lst)-i-1])
+  return res_lst
+
+def remdup(lst):
+  uni_lst = []
+  for i in reverse(lst):
+    if i not in uni_lst: 
+       uni_lst.append(i)
+  return(reverse(uni_lst))
+
+remdup(lst)
