@@ -1,0 +1,10 @@
+def splitsum(lst):
+  pos = []
+  neg = []
+  for i in lst:
+    if i >=0:
+      pos.append(i*i)
+    else:
+      neg.append(i*i*i)
+  return [sum(pos),sum(neg)]
+splitsum(lst)
