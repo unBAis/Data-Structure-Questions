@@ -1,0 +1,17 @@
+def reverse(lst):
+  res_lst = []
+  for i in range(len(lst)):
+    res_lst.append(lst[len(lst)-i-1])
+  return res_lst
+  
+  
+  def matrixflip(myl,flip):
+  #for horizontal flip
+  if flip == 'h':
+    new_lst = []
+    for i in myl:
+      new_lst.append(reverse(i))
+    return new_lst
+  #for vertical flip
+  elif flip == 'v':
+    return reverse(myl)
