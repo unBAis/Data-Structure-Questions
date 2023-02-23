@@ -1,0 +1,15 @@
+#checks if the argument is a list or not
+def listtype(l):
+    return(type(l) == type([]))
+    
+#flattens the nested list
+fin = []
+def flatten(lst):
+    
+    for i in lst:
+        if listtype(i)== False:
+            fin.append(i)
+        else:
+            flatten(i)
+    return fin
+ 
