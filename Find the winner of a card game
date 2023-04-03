@@ -1,0 +1,48 @@
+#the following function takes in the two lists input to return the winner of the game
+
+
+def card_game(a,b):
+    
+    a_score = 0
+    b_score = 0
+
+    for i,j in zip(range(len(a)),range(len(b))):
+
+        if (word == "Even") & (i%2 != 0):
+            a_score += a[0] - b[0] + a[i] - b[j]
+            b_score += b[0] - a[0] + b[i] - a[j]
+
+        elif (word == "Odd") & (i%2 == 0):
+            print(a_score,b_score)
+            a_score += a[i] - b[j]
+            b_score += b[i] - a[j]
+            
+    if a_score > b_score:
+        return "A"
+    else:
+        return "B"
+
+
+
+#read the input as follows
+#when there are multiple input lines 
+lst = []
+while True:
+    try:
+        line = input()
+    except EOFError:
+        break
+    lst.append(line)
+    
+#now that all the lines are in the list format lets seperate the lists 
+
+lst, word = lst[:len(lst)-1],lst[len(lst)-1]
+lst = [int(i) for i in lst]
+a_len = lst[0]
+a = lst[1:a_len+1]
+
+b_len = lst[a_len + 1]
+b = lst[a_len+2:len(lst)]
+
+
+print(card_game(a,b))
