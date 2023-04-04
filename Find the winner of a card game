@@ -1,5 +1,10 @@
-#the following function takes in the two lists input to return the winner of the game
-
+#the following function takes in the two lists input to return the winner of the game of a card game explained as follows:
+# two people have same number of cards
+# at random someone will call even or odd
+#if even is called then first card will be flipped and each person will subtract the other players card from own card and add the number to their own score.
+# if odd is called then one card will be removed and the next card will be flipped and the scoring will be same as described in even flipping.
+#thereafter alternativly card will be flipped and removed and the score will be added same as decribe above.
+#when the cards are finished the player with the max score will win.
 
 def card_game(a,b):
     
@@ -39,7 +44,7 @@ while True:
 lst, word = lst[:len(lst)-1],lst[len(lst)-1]
 lst = [int(i) for i in lst]
 a_len = lst[0]
-a = lst[1:a_len+1]
+a = lst[1:a_len + 1 ]
 
 b_len = lst[a_len + 1]
 b = lst[a_len+2:len(lst)]
