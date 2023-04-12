@@ -1,0 +1,42 @@
+# The heroes start fighting villains one by one in the same order, first villain 1 then villain 2 and so on. 
+# It is might be possible that before defeating all the villains, 
+# all the heroes are defeated. 
+# Therefore, to ensure the victory of the heroes, you want to remove some villains from the front.
+
+# Your task is to find the minimum number of villains you need to remove
+# from the front such that the victory of the heroes is guaranteed.
+
+# Note: If in the last battle, both the hero and villain are defeated and 
+# no more heroes or villains remain, it would still be considered a 
+# victory since all the villains are defeated.
+
+#find out the minimum number of villians needs to be removed to ensure the heroes victory
+
+def front_remove(health_h,health_v):
+    tot = 0
+    for i in health_h:
+        tot += i 
+        
+    tot_v = 0
+    for i in range(len(health_v)-1,0,-1):
+        tot_v += health_v[i] 
+        if tot_v == tot:
+            return i
+            break
+        if i == 1:
+            return 0
+
+lst = []
+while True:
+    try:
+        line = input()
+    except EOFError:
+        break
+    lst.append(line)
+lst = [int(i) for i in lst]
+v = lst[0]
+h = lst[1]
+health_h = h*[lst[2]]
+health_v = lst[3:]
+print(front_remove(health_h,health_v))
+
