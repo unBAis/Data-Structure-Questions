@@ -1,4 +1,4 @@
-#fibonacci series
+#fibonacci series long method 
 
 
 def fib_series(n):
