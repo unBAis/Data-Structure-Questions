@@ -6,6 +6,7 @@
 #thereafter alternativly card will be flipped and removed and the score will be added same as decribe above.
 #when the cards are finished the player with the max score will win.
 
+
 def card_game(a,b):
     
     a_score = 0
