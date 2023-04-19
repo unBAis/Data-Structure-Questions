@@ -51,4 +51,5 @@ b_len = lst[a_len + 1]
 b = lst[a_len+2:len(lst)]
 
 
+
 print(card_game(a,b))
