@@ -1,0 +1,29 @@
+def reverse(val):
+    fin = ''
+    for i in range(len(val)-1,-1,-1):
+        fin += str(val[i])
+    return fin
+
+def decimal_to_any_base(n,bit):
+    div = 1
+    res = ''
+    while div != 0 :
+        (div,rem) = (n//bit , n%bit)
+        n = div
+        res += str(rem)
+        
+    return reverse(res)
+    
+
+
+
+def any_base_to_decimal(val,base):
+    res = ''
+    num = 0 
+    for i,j in zip(range(len(val)),reverse(val)):
+        if j == 0:
+            pass
+        else:
+            num += int(j) * pow(base,int(i))
+
+    return num
