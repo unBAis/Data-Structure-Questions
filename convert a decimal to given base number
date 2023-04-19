@@ -9,5 +9,5 @@ def decimal_to_any_bit(n,base):
     fin = ''
     for i in range(len(res)-1,-1,-1):
         fin += res[i]
-    return int(fin)
+    return fin
 
