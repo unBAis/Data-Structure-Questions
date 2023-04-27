@@ -18,6 +18,38 @@ nums = [1,7,3,6,5,6]
 sol = Solution()
 sol.pivotIndex(nums)
 
+#########################################################
+#when input is given in input() format
+
+tem = []
+
+while True:
+    try:
+        val = input()
+    except EOFError:
+        break 
+    tem.append(val)
+    
+tem = tem[0].split(",")
+lst = []
+for i in tem:
+    lst.append(int(i))
+    
+    
+def equi_index(lst):
+    
+    tot_sum = sum(lst)
+    left_sum =  0
+    
+    for i, x in enumerate(lst):
+        right_sum = tot_sum - left_sum -x 
+        if right_sum == left_sum:
+            return i
+        left_sum += x
+    return -1
+print(equi_index(lst))
+        
+        
 
 
 
