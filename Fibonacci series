@@ -2,6 +2,7 @@
 
 
 def fib_series(n):
+
     fib_list = []
     fib_0 = 0
     fib_1 = 1
